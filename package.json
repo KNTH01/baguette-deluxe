@@ -1,0 +1,55 @@
+{
+  "name": "stableins",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "^10.15.1"
+  },
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:development": "vue-cli-service build --mode development",
+    "build:staging": "vue-cli-service build --mode staging",
+    "serve:development": "vue-cli-service serve",
+    "serve:local": "vue-cli-service serve --mode local",
+    "serve:production": "vue-cli-service serve --mode production",
+    "serve:staging": "vue-cli-service serve --mode staging"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "child-replace-with-polyfill": "^1.0.1",
+    "core-js": "^2.6.9",
+    "custom-event-polyfill": "^1.0.7",
+    "date-fns": "^2.9.0",
+    "element-closest-polyfill": "^1.0.0",
+    "ie11-custom-properties": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "url-polyfill": "^1.1.7",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/vue-router": "^2.0.0",
+    "@vue/cli-plugin-babel": "^3.11.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.11.0",
+    "@vue/cli-plugin-typescript": "^3.11.0",
+    "@vue/cli-plugin-unit-jest": "^3.11.0",
+    "@vue/cli-service": "^3.11.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "prettier": "^1.18.2",
+    "sass": "^1.23.0",
+    "sass-loader": "^7.3.1",
+    "ts-jest": "^24.1.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.5",
+    "vue-class-component": "^7.1.0",
+    "vue-property-decorator": "^8.3.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuex-class": "^0.3.2",
+    "vuex-module-decorators": "^0.10.1"
+  }
+}
