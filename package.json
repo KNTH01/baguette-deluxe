@@ -6,15 +6,9 @@
     "node": "^10.15.1"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "json-server --watch db.json --delay 5000 vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "build:development": "vue-cli-service build --mode development",
-    "build:staging": "vue-cli-service build --mode staging",
-    "serve:development": "vue-cli-service serve",
-    "serve:local": "vue-cli-service serve --mode local",
-    "serve:production": "vue-cli-service serve --mode production",
-    "serve:staging": "vue-cli-service serve --mode staging"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -40,6 +34,7 @@
     "@vue/cli-service": "^3.11.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-core": "7.0.0-bridge.0",
+    "json-server": "^0.16.0",
     "prettier": "^1.18.2",
     "sass": "^1.23.0",
     "sass-loader": "^7.3.1",

@@ -19,7 +19,9 @@ don't change the name). Some of them already have a codename, so you won't be ab
 
 The CNI Backend Developers have provided you an API with the following endpoints. These endpoints are FREAKING SLOW, so avoid calling them more than once:
 
-(TODO)
+- localhost:3000/profile -> Retrieve agent name and ID
+- localhost:3000/missions -> Retrieve missions
+- localhost:3000/missions/:id -> Retrieve/Update mission with id = :id
 
 Good Luck, agent Dander Perro.
 
@@ -29,7 +31,8 @@ The app may consist in three screen.
 
 All of them will have a common layout, where the navbar is shown. In the navbar, we only show the initial of the first name and the last name. So, Dander Perro would be D. Perro.
 
-The navbar must be a component.
+The navbar must be a component. The background of the navbar is located at src/assets/bg.png  The logo, at public/assets
+
 ```
 +------------------------------------+
 | logo    Main   Settings  D. Perro  |
@@ -87,7 +90,7 @@ Key Features:
 - V-if (When loading, we won't show anything except the loading text)
 
 
-Route 2: '/edit/<id>/':
+Route 2: '/edit/:id/':
 In this view you will be able to change the name of a task. After you click on save, the name must be change and you should be redirected to the main view again.
 Please note, if you try to edit a non-editable mission, you should be redirected to the main view too. Again, CNI want the form to be reusable, so the functionality
 must live out of the form component. The button must be disabled until the new name has at least a length of 8. They want the input to be a custom component.
@@ -119,3 +122,12 @@ Key Features:
 - Emit / receive events.
 - Before router enter.
 - V-model for the input
+
+ ## Running the project
+ ```
+ npm install
+ ````
+
+```
+npm run serve
+```
