@@ -6,7 +6,9 @@
     "node": "^10.15.1"
   },
   "scripts": {
-    "serve": "json-server --watch db.json --delay 5000 vue-cli-service serve",
+    "serve": "run-p  run-server development",
+    "run-server": "json-server --watch db.json --delay 5000",
+    "development": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
