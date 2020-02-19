@@ -53,7 +53,11 @@ Key Features:
 
 ### Screen 1: Main
 Route: '/':
-This is the main view. Here you will be able to see the missions you have assigned. CNI want this to be
+This is the main view. Here you will be able to see the missions you have assigned. They loved
+the layout of the list elements, that's why the want that each list element must be a *reusable*
+component. The mission list must be a component
+
+CNI want this to be
 reusable, so, the list, and each list element must be components, and the functionality must live in the
 view. When the list is loading, a loading text must be shown. I know this variable could live at store,
 but I want it to live on the view.
@@ -90,7 +94,7 @@ Key Features:
 - V-if (When loading, we won't show anything except the loading text)
 
 
-Route 2: '/edit/:id/':
+Route 2: '/detail/:id/':
 In this view you will be able to change the name of a task. After you click on save, the name must be change and you should be redirected to the main view again.
 Please note, if you try to edit a non-editable mission, you should be redirected to the main view too. Again, CNI want the form to be reusable, so the functionality
 must live out of the form component. The button must be disabled until the new name has at least a length of 8. They want the input to be a custom component.
@@ -122,6 +126,31 @@ Key Features:
 - Emit / receive events.
 - Before router enter.
 - V-model for the input
+
+Route 3: '/settings/':
+In this view, you just need to show your id and name. Sometimes the CNI missions will make you forgot who you are. 
+You can include a picture of something you like if it helps to make you remember your identity
+```
++----------------------------------------------------------+
+|                                                          |
+| LogoIMG                      Main   Settings  D. Perro   |
+|                                                          |
++----------------------------------------------------------+
+|   ID: 1                                                  |
+|   Name: Dander Perro                                     |
+|                                                          | 
+|                       ()()                               |
+|                       (^.^)                              |
+|                       (()())                             |
+|                                                          |
++----------------------------------------------------------+
+```
+## Desired component folder structure
+- src/components -> components that can be used at any view: PG: Input, button...
+- src/views -> views not related with the missions.
+
+- src/apps/missions/components -> components only for the missions list. This components can include some store logic
+- src/apps/missions/views -> views related with the missions
 
  ## Running the project
  ```
