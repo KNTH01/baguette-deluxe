@@ -55,12 +55,8 @@ Key Features:
 Route: '/':
 This is the main view. Here you will be able to see the missions you have assigned. They loved
 the layout of the list elements, that's why the want that each list element must be a *reusable*
-component. The mission list must be a component
-
-CNI want this to be
-reusable, so, the list, and each list element must be components, and the functionality must live in the
-view. When the list is loading, a loading text must be shown. I know this variable could live at store,
-but I want it to live on the view.
+component. The mission list must be a component only for the missions application and should not include
+the missions count. 
 
 ```
   +----------------------------------------------------------+
@@ -151,6 +147,15 @@ You can include a picture of something you like if it helps to make you remember
 
 - src/apps/missions/components -> components only for the missions list. This components can include some store logic
 - src/apps/missions/views -> views related with the missions
+
+
+ ## Final suggestion
+Vue was created for the sake of simplicity. A complex code not always mean that is more efficient. Simple code can 
+work really well, and always think in the future developer that will need to work on this. The future developer shouldn't
+expend more than 1 hour for understanding the whole structure and work methodology of a project. (In this project, it should
+expend 5 minutes). And remember, simple != dirty
+
+Please, keep this in mind. 
 
  ## Running the project
  ```
