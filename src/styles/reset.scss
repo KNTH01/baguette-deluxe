@@ -1,0 +1,121 @@
+
+
+html, body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; font-feature-settings: “liga”,“kern”; font-variant-numeric: proportional-nums; }
+
+* {
+  margin: 0;
+}
+
+p,span{
+  font-weight: 400;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+
+
+input,
+select {
+  vertical-align: middle;
+}
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  vertical-align: middle;
+  white-space: normal;
+  width: auto;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+}
+
+input:active {
+  outline: 0;
+}
+
+::-webkit-search-decoration {
+  display: none;
+}
+
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+textarea {
+  vertical-align: top;
+  overflow: auto;
+}
+
+select[multiple] {
+  vertical-align: top;
+}
