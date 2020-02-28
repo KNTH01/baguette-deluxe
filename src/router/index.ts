@@ -19,7 +19,7 @@ const routes = [
     path: '/detail/:id',
     name: 'Detail',
     component: Detail,
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (to: any, from: any, next: any) => {
       if (to.params && Number(to.params.id)) {
         const index = store.state.missions.findIndex(
           (mission: IfcMission) =>
