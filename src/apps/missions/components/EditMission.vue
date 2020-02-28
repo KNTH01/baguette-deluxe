@@ -27,15 +27,19 @@ export default class EditMission extends Vue {
   missionName = '';
 
   async editMission(): Promise<void> {
-    try {
-      await this.$store.dispatch('editMission', {
-        id: Number(this.$route.params.id),
-        name: this.missionName,
-      });
-      this.missionName = '';
-    } catch (error) {
-      console.error(error);
+    if (this.mission.editable && this.missionName.trim()) {
+      try {
+        await this.$store.dispatch('editMission', {
+          id: Number(this.$route.params.id),
+          name: this.missionName,
+        });
+        this.missionName = '';
+      } catch (error) {
+        console.error(error);
+      }
     }
+
+    this.$router.push({ name: 'Main' });
   }
 }
 </script>
