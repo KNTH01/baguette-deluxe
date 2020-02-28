@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Main from '@/apps/missions/views/Main.vue';
 import Detail from '@/apps/missions/views/Detail.vue';
+import Settings from '@/apps/missions/views/Settings.vue';
 
 import store from '@/store';
 import { IfcMission } from '@/store/ifc';
@@ -32,6 +33,11 @@ const routes = [
 
       return next({ name: 'Main' });
     },
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: Settings,
   },
 ];
 

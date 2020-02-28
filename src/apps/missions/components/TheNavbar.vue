@@ -1,11 +1,9 @@
 <template>
   <nav>
-    <router-link :to="{ name: 'Main' }">Logo</router-link>
+    Logo
     <router-link :to="{ name: 'Main' }">Main</router-link>
-    <router-link :to="{ name: 'Main' }">Settings</router-link>
-    <router-link v-if="name" :to="{ name: 'Main' }">
-      {{ name | displayName }}
-    </router-link>
+    <router-link :to="{ name: 'Settings' }">Settings</router-link>
+    {{ name | displayName }}
   </nav>
 </template>
 
