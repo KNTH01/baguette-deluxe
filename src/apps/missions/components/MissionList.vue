@@ -6,12 +6,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({})
 export default class MissionList extends Vue {
-  get missions() {
+  get missions(): [] {
     return this.$store.state.missions;
   }
 }

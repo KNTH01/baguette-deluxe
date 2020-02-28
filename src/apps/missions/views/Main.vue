@@ -10,9 +10,9 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import MissionList from '@/apps/missions/components/MissionList';
+import MissionList from '@/apps/missions/components/MissionList.vue';
 
 @Component({
   components: { MissionList },
@@ -20,11 +20,11 @@ import MissionList from '@/apps/missions/components/MissionList';
 export default class Main extends Vue {
   isLoading = true;
 
-  get missionCount() {
+  get missionCount(): number {
     return this.$store.getters.missionCount;
   }
 
-  async created() {
+  async created(): Promise<void> {
     await this.$store.dispatch('fetchMissions');
     this.isLoading = false;
   }

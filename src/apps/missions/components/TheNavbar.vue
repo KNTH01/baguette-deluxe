@@ -9,12 +9,12 @@
   </nav>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   filters: {
-    displayName(value) {
+    displayName(value: string): string {
       if (value.trim()) {
         const [firstName, lastName] = value.split(' ');
         return `${firstName.charAt(0)}. ${lastName}`;
@@ -25,7 +25,7 @@ import { Component, Vue } from 'vue-property-decorator';
   },
 })
 export default class TheNavbar extends Vue {
-  get name() {
+  get name(): string {
     return this.$store.state.profile.name;
   }
 }

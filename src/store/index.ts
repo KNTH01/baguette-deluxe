@@ -1,29 +1,15 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { IfcPerson } from './ifc';
 
 Vue.use(Vuex);
 
 import { client } from './api';
 
-interface Person {
-  id: number;
-  name: string;
-}
-
-interface Mission {
-  id: number;
-  name: string;
-  editable: boolean;
-}
-
-interface Missions extends Array<Mission> {}
-
-const emptyMissions: Missions = [];
-
 export default new Vuex.Store({
   state: {
     profile: {},
-    missions: emptyMissions,
+    missions: [],
   },
 
   getters: {
@@ -31,17 +17,17 @@ export default new Vuex.Store({
   },
 
   mutations: {
-    setProfile(state, profile: Person) {
+    setProfile(state, profile: IfcPerson): void {
       state.profile = profile;
     },
 
-    setMissions(state, missions: Missions) {
+    setMissions(state, missions: []): void {
       state.missions = missions;
     },
   },
 
   actions: {
-    async fetchProfile({ commit }) {
+    async fetchProfile({ commit }): Promise<void> {
       try {
         const result = await client.get('profile');
         const profile = result.data;
@@ -56,7 +42,7 @@ export default new Vuex.Store({
       }
     },
 
-    async fetchMissions({ commit }) {
+    async fetchMissions({ commit }): Promise<void> {
       try {
         const result = await client.get('missions');
         const missions = result.data;
@@ -69,6 +55,6 @@ export default new Vuex.Store({
       }
     },
 
-    fetchMissionId() {},
+    // fetchMissionId() {},
   },
 });
