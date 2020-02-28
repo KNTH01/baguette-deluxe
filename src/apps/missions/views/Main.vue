@@ -1,5 +1,8 @@
 <template>
   <div>
+    <span>
+      {{ missionCount }}
+    </span>
     <MissionList></MissionList>
   </div>
 </template>
@@ -12,6 +15,10 @@ import MissionList from '@/apps/missions/components/MissionList';
   components: { MissionList },
 })
 export default class Main extends Vue {
+  get missionCount() {
+    return this.$store.getters.missionCount;
+  }
+
   created() {
     this.$store.dispatch('fetchMissions');
   }

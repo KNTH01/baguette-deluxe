@@ -26,6 +26,10 @@ export default new Vuex.Store({
     missions: emptyMissions,
   },
 
+  getters: {
+    missionCount: state => state.missions.length,
+  },
+
   mutations: {
     setProfile(state, profile: Person) {
       state.profile = profile;
