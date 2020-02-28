@@ -1,5 +1,5 @@
 const TerserPlugin = require('terser-webpack-plugin');
-const terserOptions = require('./minify-options');
+const terserOptions = require('./minify-options.ts');
 
 module.exports = {
   productionSourceMap: false,
