@@ -1,7 +1,10 @@
 <template>
   <div>
-    <TheNavbar></TheNavbar>
-    <router-view></router-view>
+    <div v-if="!isLoading">
+      <TheNavbar></TheNavbar>
+      <router-view></router-view>
+    </div>
+    <div v-else>Loading...</div>
   </div>
 </template>
 
@@ -15,9 +18,14 @@ import { Component, Vue } from 'vue-property-decorator';
   },
 })
 export default class App extends Vue {
-  created(): void {
-    console.log(process.env.VUE_APP_HELLO_DEV);
-    this.$store.dispatch('fetchProfile');
+  isLoading = true;
+
+  async created(): Promise<void> {
+    await Promise.all([
+      this.$store.dispatch('fetchProfile'),
+      this.$store.dispatch('fetchMissions'),
+    ]);
+    this.isLoading = false;
   }
 }
 </script>

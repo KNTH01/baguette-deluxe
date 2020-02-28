@@ -1,12 +1,9 @@
 <template>
   <div>
-    <div v-if="!isLoading">
-      <span>
-        {{ missionCount }}
-      </span>
-      <MissionList></MissionList>
-    </div>
-    <div v-else>Loading...</div>
+    <span>
+      {{ missionCount }}
+    </span>
+    <MissionList></MissionList>
   </div>
 </template>
 
@@ -18,15 +15,8 @@ import MissionList from '@/apps/missions/components/MissionList.vue';
   components: { MissionList },
 })
 export default class Main extends Vue {
-  isLoading = true;
-
   get missionCount(): number {
     return this.$store.getters.missionCount;
-  }
-
-  async created(): Promise<void> {
-    await this.$store.dispatch('fetchMissions');
-    this.isLoading = false;
   }
 }
 </script>
