@@ -9,6 +9,9 @@
         :to="{ name: 'Detail', params: { id: mission.id } }"
       >
         {{ mission.name }}
+        <span v-if="!mission.editable" class="ml-4 text-xs text-gray-400">
+          Not editable
+        </span>
       </router-link>
     </ul>
   </div>
