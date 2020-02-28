@@ -1,12 +1,12 @@
 {
-  "name": "stableins",
+  "name": "baguette-deluxe",
   "version": "0.1.0",
   "private": true,
   "engines": {
     "node": "^10.15.1"
   },
   "scripts": {
-    "serve": "run-p  run-server development",
+    "serve": "run-p run-server development",
     "run-server": "json-server --watch db.json --delay 5000",
     "development": "vue-cli-service serve",
     "build": "vue-cli-service build",
