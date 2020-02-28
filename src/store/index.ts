@@ -27,7 +27,7 @@ export default new Vuex.Store({
 
     editMission(state, updatedMission: IfcMission): void {
       const index: number = state.missions.findIndex(
-        mission => mission.id === updatedMission.id
+        (mission: IfcMission) => mission.id === updatedMission.id
       );
 
       if (index > -1) {
