@@ -11,23 +11,25 @@
     "run-server": "json-server --watch db.json --delay 5000"
   },
   "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11",
-    "vue-class-component": "^7.2.2",
-    "vue-property-decorator": "^8.3.0",
-    "vue-router": "^3.1.5",
-    "vuex": "^3.1.2",
     "axios": "^0.19.2",
     "child-replace-with-polyfill": "^1.0.1",
+    "core-js": "^3.6.4",
     "custom-event-polyfill": "^1.0.7",
     "date-fns": "^2.9.0",
     "element-closest-polyfill": "^1.0.0",
     "ie11-custom-properties": "^3.0.0",
     "npm-run-all": "^4.1.5",
-    "url-polyfill": "^1.1.7"
+    "url-polyfill": "^1.1.7",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.2",
+    "vue-property-decorator": "^8.3.0",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/jest": "^24.0.19",
+    "@types/vue-router": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "@vue/cli-plugin-babel": "~4.2.0",
@@ -44,16 +46,15 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.1.2",
-    "prettier": "^1.19.1",
-    "typescript": "~3.7.5",
-    "vue-template-compiler": "^2.6.11",
-    "@types/axios": "^0.14.0",
-    "@types/vue-router": "^2.0.0",
     "json-server": "^0.16.0",
+    "prettier": "^1.19.1",
     "sass": "^1.23.0",
     "sass-loader": "^7.3.1",
     "ts-jest": "^24.1.0",
-    "tslint-config-prettier": "^1.18.0"
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "~3.7.5",
+    "vue-cli-plugin-tailwind": "~1.2.0",
+    "vue-template-compiler": "^2.6.11"
   },
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"

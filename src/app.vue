@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container px-2 mx-auto">
     <div v-if="!isLoading">
       <TheNavbar></TheNavbar>
       <router-view></router-view>
@@ -30,4 +30,6 @@ export default class App extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+@import './assets/tailwind.css';
+</style>
