@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Main from '@/apps/missions/views/Main.vue';
+import Detail from '@/apps/missions/views/Detail.vue';
 
 Vue.use(VueRouter);
 
@@ -10,9 +11,12 @@ const routes = [
     name: 'Main',
     component: Main,
   },
+  {
+    path: '/detail/:id',
+    name: 'Detail',
+    component: Detail,
+  },
 ];
-
-console.log('process.env.BASE_URL :', process.env.BASE_URL);
 
 const router = new VueRouter({
   mode: 'history',
