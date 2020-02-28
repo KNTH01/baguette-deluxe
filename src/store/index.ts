@@ -5,17 +5,34 @@ Vue.use(Vuex);
 
 import { client } from './api';
 
+interface Person {
+  id: number;
+  name: string;
+}
+
+interface Mission {
+  id: number;
+  name: string;
+  editable: boolean;
+}
+
+interface Missions extends Array<Mission> {}
+
+const emptyMissions: Missions = [];
+
 export default new Vuex.Store({
   state: {
-    profile: {
-      id: null,
-      name: '',
-    },
+    profile: {},
+    missions: emptyMissions,
   },
 
   mutations: {
-    setProfile(state, profile) {
+    setProfile(state, profile: Person) {
       state.profile = profile;
+    },
+
+    setMissions(state, missions: Missions) {
+      state.missions = missions;
     },
   },
 
@@ -34,7 +51,20 @@ export default new Vuex.Store({
         console.error(error);
       }
     },
-    fetchMissions() {},
+
+    async fetchMissions({ commit }) {
+      try {
+        const result = await client.get('missions');
+        const missions = result.data;
+
+        if (missions.length > 0) {
+          commit('setMissions', missions);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    },
+
     fetchMissionId() {},
   },
 });
