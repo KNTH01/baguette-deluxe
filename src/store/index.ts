@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { IfcPerson } from './ifc';
+import { IfcPerson, IfcMission } from './ifc';
 
 Vue.use(Vuex);
 
@@ -23,6 +23,16 @@ export default new Vuex.Store({
 
     setMissions(state, missions: []): void {
       state.missions = missions;
+    },
+
+    editMission(state, updatedMission: IfcMission): void {
+      const index: number = state.missions.findIndex(
+        mission => mission.id === updatedMission.id
+      );
+
+      if (index > -1) {
+        state.missions[index] = updatedMission;
+      }
     },
   },
 
@@ -55,6 +65,19 @@ export default new Vuex.Store({
       }
     },
 
-    // fetchMissionId() {},
+    async editMission({ commit }, payload): Promise<void> {
+      try {
+        const result = await client.put(`missions/${payload.id}`, {
+          name: payload.name,
+          editable: true,
+        });
+
+        const mission = result.data;
+
+        commit('editMission', mission);
+      } catch (error) {
+        console.error(error);
+      }
+    },
   },
 });
