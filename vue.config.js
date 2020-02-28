@@ -9,7 +9,7 @@ module.exports = {
       splitChunks: false,
     },
     performance: {
-      hints: false
+      hints: false,
     },
     output: {
       filename: 'main.js',
@@ -17,11 +17,13 @@ module.exports = {
     },
     devServer: {
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
-        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
-      }
-    }
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods':
+          'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers':
+          'X-Requested-With, content-type, Authorization',
+      },
+    },
   },
 
   css: {
@@ -36,13 +38,10 @@ module.exports = {
   transpileDependencies: ['vuex-module-decorators'],
 
   chainWebpack: config => {
-    config.optimization.minimizer([
-      new TerserPlugin(terserOptions),
-    ]);
-    config.plugin('html')
-      .tap(args => {
-        args[0].inject = false;
-        return args;
-      });
-  }
-}
+    config.optimization.minimizer([new TerserPlugin(terserOptions)]);
+    config.plugin('html').tap(args => {
+      args[0].inject = false;
+      return args;
+    });
+  },
+};
