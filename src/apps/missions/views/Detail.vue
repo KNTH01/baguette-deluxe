@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>Detail</h1>
-    {{ $route.params.id }}
     <div v-if="mission">
-      <p>{{ mission.id }}{{ mission.name }}</p>
+      <h1 class="my-4 text-lg">
+        Mission: <span class="underline">{{ mission.name }}</span>
+      </h1>
       <EditMission :mission="mission"></EditMission>
     </div>
   </div>

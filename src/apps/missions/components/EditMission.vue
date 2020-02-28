@@ -2,10 +2,19 @@
   <div>
     <form @submit.prevent="editMission">
       <p>
-        <input type="text" v-model="missionName" />
+        <input
+          class="block w-full px-4 py-2 leading-normal bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:shadow-outline"
+          type="text"
+          v-model="missionName"
+        />
       </p>
       <p>
-        <button type="submit">Edit mission</button>
+        <button
+          class="px-4 py-2 my-4 font-bold text-white rounded bg-primary hover:opacity-75"
+          type="submit"
+        >
+          Edit mission
+        </button>
       </p>
     </form>
   </div>
