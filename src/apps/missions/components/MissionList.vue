@@ -1,11 +1,15 @@
 <template>
   <div>
     <ul>
-      <li v-for="mission in missions" :key="mission.id">
-        <router-link :to="{ name: 'Detail', params: { id: mission.id } }">
-          {{ mission.name }}
-        </router-link>
-      </li>
+      <router-link
+        tag="li"
+        class="px-4 py-2 my-2 bg-gray-100 rounded cursor-pointer hover:bg-gray-200"
+        v-for="mission in missions"
+        :key="mission.id"
+        :to="{ name: 'Detail', params: { id: mission.id } }"
+      >
+        {{ mission.name }}
+      </router-link>
     </ul>
   </div>
 </template>
