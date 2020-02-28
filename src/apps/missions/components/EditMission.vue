@@ -13,17 +13,19 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { IfcMission } from '@/store/ifc';
 
-@Component({
+// Define the props by using Vue's canonical way.
+const EditMissionProps = Vue.extend({
   props: {
     mission: {
       type: Object,
       required: true,
     },
   },
-})
-export default class EditMission extends Vue {
+});
+
+@Component
+export default class EditMission extends EditMissionProps {
   missionName = '';
 
   async editMission(): Promise<void> {
