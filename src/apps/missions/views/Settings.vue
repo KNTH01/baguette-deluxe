@@ -1,8 +1,13 @@
 <template>
   <div>
-    <h1>Settings</h1>
-    {{ profile.id }}
-    {{ profile.name }}
+    <h1 class="my-4 text-xl">Settings</h1>
+
+    <p>
+      Yo soy
+      <span class="text-lg font-semibold">
+        {{ profile.name }}
+      </span>
+    </p>
   </div>
 </template>
 
