@@ -48,8 +48,6 @@
     "eslint-plugin-vue": "^6.1.2",
     "json-server": "^0.16.0",
     "prettier": "^1.19.1",
-    "sass": "^1.23.0",
-    "sass-loader": "^7.3.1",
     "ts-jest": "^24.1.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.7.5",
