@@ -1,8 +1,10 @@
 <template>
   <div>
-    <span>
-      {{ missionCount }}
-    </span>
+    <p class="mt-8 mb-4 text-right">
+      <span class="px-3 py-1 text-sm text-white rounded-full bg-primary">
+        {{ missionCount }}
+      </span>
+    </p>
     <MissionList></MissionList>
   </div>
 </template>
