@@ -13,9 +13,9 @@ import { IfcMission } from '@/store/ifc';
 @Component({})
 export default class Detail extends Vue {
   get mission(): IfcMission | null {
-    return this.$store.state.missions.find(
-      (mission: IfcMission) => mission.id.toString() === this.$route.params.id
-    );
+    return this.$store.state.missions.find((mission: IfcMission) => {
+      return mission.id.toString() === this.$route.params.id.toString();
+    });
   }
 }
 </script>

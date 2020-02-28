@@ -1,7 +1,11 @@
 <template>
   <div>
     <ul>
-      <li v-for="mission in missions" :key="mission.id">{{ mission.name }}</li>
+      <li v-for="mission in missions" :key="mission.id">
+        <router-link :to="{ name: 'Detail', params: { id: mission.id } }">
+          {{ mission.name }}
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
