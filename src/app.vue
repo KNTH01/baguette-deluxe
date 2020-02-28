@@ -17,6 +17,7 @@ import { Component, Vue } from 'vue-property-decorator';
 export default class App extends Vue {
   created(): void {
     console.log(process.env.VUE_APP_HELLO_DEV);
+    this.$store.dispatch('fetchProfile');
   }
 }
 </script>
