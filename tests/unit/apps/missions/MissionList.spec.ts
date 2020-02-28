@@ -39,6 +39,6 @@ describe('MissionList.vue Test', () => {
     // render the component
     const wrapper = shallowMount(MissionList, { localVue, store });
 
-    expect(wrapper.findAll('li').length).toBe(3);
+    expect(wrapper.findAll('router-link').length).toBe(3);
   });
 });
