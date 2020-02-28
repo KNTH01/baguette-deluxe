@@ -1,6 +1,4 @@
 // Specific polyfills to allow code compatibility with IE11
-import 'core-js/es6';
-import 'core-js/es7';
 import 'ie11-custom-properties';
 import 'element-closest-polyfill';
 import 'child-replace-with-polyfill';
