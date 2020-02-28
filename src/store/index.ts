@@ -7,31 +7,26 @@ Vue.use(Vuex);
 import { client } from './api';
 
 export default new Vuex.Store({
-  state: {
-    profile: {},
-    missions: [],
-  },
-
   getters: {
-    missionCount: state => state.missions.length,
+    missionCount: (state: any) => state.missions.length,
   },
 
   mutations: {
-    setProfile(state, profile: IfcPerson): void {
+    setProfile(state: any, profile: IfcPerson): void {
       state.profile = profile;
     },
 
-    setMissions(state, missions: []): void {
+    setMissions(state: any, missions: []): void {
       state.missions = missions;
     },
 
-    editMission(state, updatedMission: IfcMission): void {
+    editMission(state: any, updatedMission: IfcMission): void {
       const index: number = state.missions.findIndex(
         (mission: IfcMission) => mission.id === updatedMission.id
       );
 
       if (index > -1) {
-        state.missions[index] = updatedMission;
+        state.missions.splice(index, 1, updatedMission);
       }
     },
   },
