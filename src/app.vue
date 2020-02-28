@@ -2,7 +2,7 @@
   <div>
     <div v-if="!isLoading">
       <TheNavbar></TheNavbar>
-      <router-view></router-view>
+      <router-view class="container px-2 mx-auto"></router-view>
     </div>
     <div v-else>Loading...</div>
   </div>
