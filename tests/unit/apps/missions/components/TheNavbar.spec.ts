@@ -7,8 +7,6 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 localVue.use(VueRouter);
 
-const router = new VueRouter();
-
 describe('TheNavbar.vue Test', () => {
   let state;
   let store: any;
@@ -27,7 +25,7 @@ describe('TheNavbar.vue Test', () => {
 
   it('renders routes when component is created', () => {
     // render the component
-    const wrapper = shallowMount(TheNavbar, { localVue, router, store });
+    const wrapper = shallowMount(TheNavbar, { localVue, store });
 
     expect(wrapper.text()).toMatch('D. Perro');
   });
