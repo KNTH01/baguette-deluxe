@@ -23,7 +23,7 @@ describe('TheNavbar.vue Test', () => {
     });
   });
 
-  it('renders routes when component is created', () => {
+  it('renders username displayed with filter', () => {
     // render the component
     const wrapper = shallowMount(TheNavbar, { localVue, store });
 
