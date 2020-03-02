@@ -59,4 +59,41 @@ describe('EditMission.vue Test', () => {
     expect($router.push).toHaveBeenCalled();
     expect(wrapper.vm.$route.name).toBe('Main');
   });
+
+  it('does not edit the mission and redirect to main view', async () => {
+    // render the component
+    const wrapper = mount(EditMission, {
+      propsData: {
+        mission: {
+          id: 1,
+          name: 'Say ¡Hola!',
+          editable: false,
+        },
+      },
+      mocks: {
+        $route,
+        $router,
+        $store,
+      },
+    });
+
+    expect(wrapper.vm.$route.name).toBe('Detail');
+    expect(wrapper.find('form').exists()).toBe(true);
+    expect(wrapper.find('input[type=text]').exists()).toBe(true);
+
+    wrapper.find('input[type=text]').setValue('Say Bonjour!');
+
+    expect(wrapper.vm.$data.isValid).toBe(false);
+    await Vue.nextTick();
+    expect(wrapper.vm.$data.isValid).toBe(true);
+
+    wrapper.find('form').trigger('submit.prevent');
+
+    expect($store.dispatch).toHaveBeenCalledTimes(0);
+
+    await Vue.nextTick();
+
+    expect($router.push).toHaveBeenCalled();
+    expect(wrapper.vm.$route.name).toBe('Main');
+  });
 });
