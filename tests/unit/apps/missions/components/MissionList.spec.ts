@@ -1,4 +1,4 @@
-import { shallowMount, createLocalVue } from '@vue/test-utils';
+import { createLocalVue, RouterLinkStub, shallowMount } from '@vue/test-utils';
 import MissionList from '@/apps/missions/components/MissionList.vue';
 import Vuex from 'vuex';
 
@@ -37,8 +37,12 @@ describe('MissionList.vue Test', () => {
 
   it('renders the list of missions when component is created', () => {
     // render the component
-    const wrapper = shallowMount(MissionList, { localVue, store });
+    const wrapper = shallowMount(MissionList, {
+      localVue,
+      store,
+      stubs: { RouterLink: RouterLinkStub },
+    });
 
-    expect(wrapper.findAll('router-link').length).toBe(3);
+    expect(wrapper.findAll('li').length).toBe(3);
   });
 });
