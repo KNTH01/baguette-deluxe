@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="mission">
-      <h1 class="my-4 text-xl">
+      <h1 data-test="mission-title" class="my-4 text-xl">
         Mission: <span class="underline">{{ mission.name }}</span>
       </h1>
       <EditMission :mission="mission"></EditMission>

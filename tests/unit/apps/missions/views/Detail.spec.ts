@@ -63,7 +63,11 @@ describe('DetailView Test', () => {
       },
     });
 
-    expect(wrapper.find('h1').text()).toMatch('Mission:');
-    expect(wrapper.find('h1').text()).toMatch('Austrian potatoes');
+    expect(wrapper.find('[data-test="mission-title"]').text()).toMatch(
+      'Mission:'
+    );
+    expect(wrapper.find('[data-test="mission-title"]').text()).toMatch(
+      'Austrian potatoes'
+    );
   });
 });

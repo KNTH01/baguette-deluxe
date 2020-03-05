@@ -51,7 +51,7 @@ describe('MainView Test', () => {
       store,
     });
 
-    expect(wrapper.find('span').exists()).toBe(true);
-    expect(wrapper.find('span').text()).toMatch('4');
+    expect(wrapper.find('[data-test=mission-count]').exists()).toBe(true);
+    expect(wrapper.find('[data-test=mission-count]').text()).toMatch('4');
   });
 });

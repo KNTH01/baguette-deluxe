@@ -42,9 +42,9 @@ describe('EditMission.vue Test', () => {
 
     expect(wrapper.vm.$route.name).toBe('Detail');
     expect(wrapper.find('form').exists()).toBe(true);
-    expect(wrapper.find('input[type=text]').exists()).toBe(true);
+    expect(wrapper.find('[data-test="input-mission"]').exists()).toBe(true);
 
-    wrapper.find('input[type=text]').setValue('Say Bonjour!');
+    wrapper.find('[data-test="input-mission"]').setValue('Say Bonjour!');
 
     expect(wrapper.vm.$data.isValid).toBe(false);
     await Vue.nextTick();
@@ -79,15 +79,15 @@ describe('EditMission.vue Test', () => {
 
     expect(wrapper.vm.$route.name).toBe('Detail');
     expect(wrapper.find('form').exists()).toBe(true);
-    expect(wrapper.find('input[type=text]').exists()).toBe(true);
+    expect(wrapper.find('[data-test="input-mission"]').exists()).toBe(true);
 
-    wrapper.find('input[type=text]').setValue('Say Bonjour!');
+    wrapper.find('[data-test="input-mission"]').setValue('Say Bonjour!');
 
     expect(wrapper.vm.$data.isValid).toBe(false);
     await Vue.nextTick();
     expect(wrapper.vm.$data.isValid).toBe(true);
 
-    wrapper.find('form').trigger('submit.prevent');
+    wrapper.find('[data-test="form"]').trigger('submit.prevent');
 
     expect($store.dispatch).toHaveBeenCalledTimes(0);
 

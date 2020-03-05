@@ -27,6 +27,8 @@ describe('TheNavbar.vue Test', () => {
     // render the component
     const wrapper = shallowMount(TheNavbar, { localVue, store });
 
-    expect(wrapper.text()).toMatch('D. Perro');
+    expect(wrapper.find('[data-test="display-name"]').text()).toMatch(
+      'D. Perro'
+    );
   });
 });

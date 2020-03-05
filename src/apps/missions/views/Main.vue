@@ -1,7 +1,10 @@
 <template>
   <div>
     <p class="my-4 text-right">
-      <span class="px-3 py-1 text-sm text-white rounded-full bg-primary">
+      <span
+        data-test="mission-count"
+        class="px-3 py-1 text-sm text-white rounded-full bg-primary"
+      >
         {{ missionCount }}
       </span>
     </p>

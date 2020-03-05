@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="editMission">
+    <form data-test="form" @submit.prevent="editMission">
       <p>
         <EditMissionInput
           :input-text.sync="missionName"

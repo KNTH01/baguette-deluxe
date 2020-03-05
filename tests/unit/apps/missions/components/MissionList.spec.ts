@@ -43,6 +43,6 @@ describe('MissionList.vue Test', () => {
       stubs: { RouterLink: RouterLinkStub },
     });
 
-    expect(wrapper.findAll('li').length).toBe(3);
+    expect(wrapper.findAll('[data-test="link-mission"]').length).toBe(3);
   });
 });

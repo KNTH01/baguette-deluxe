@@ -29,7 +29,10 @@
               </router-link>
             </div>
             <div class="flex-grow">
-              <p class="px-3 py-2 text-right text-white">
+              <p
+                class="px-3 py-2 text-right text-white"
+                data-test="display-name"
+              >
                 {{ name | displayName }}
               </p>
             </div>

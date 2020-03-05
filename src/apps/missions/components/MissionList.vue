@@ -3,6 +3,7 @@
     <ul>
       <router-link
         tag="li"
+        data-test="link-mission"
         class="px-4 py-2 my-2 bg-gray-100 rounded cursor-pointer hover:bg-gray-200"
         v-for="mission in missions"
         :key="mission.id"
